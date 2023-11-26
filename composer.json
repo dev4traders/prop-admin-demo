@@ -1,5 +1,5 @@
 {
-    "name": "mikha-dev/sneat-admin-demo",
+    "name": "dev4traders/sneat-admin-demo",
     "type": "project",
     "description": "Dcat admin on sneat.",
     "keywords": [
@@ -11,7 +11,7 @@
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/mikha-dev/sneat-admin.git",
+            "url": "https://github.com/dev4traders/sneat-admin.git",
             "canonical": false
         }
     ],
@@ -20,7 +20,7 @@
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "mikha-dev/sneat-admin": "*",
+        "dev4traders/sneat-admin": "*",
         "owen-it/laravel-auditing": "13.x-dev",
         "revolution/socialite-wordpress": "dev-master"
     },
