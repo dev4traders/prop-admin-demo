@@ -1,17 +1,17 @@
 {
-    "name": "dev4traders/sneat-admin-demo",
+    "name": "dev4traders/prop-admin-demo",
     "type": "project",
-    "description": "Dcat admin on sneat.",
+    "description": "Prop admin.",
     "keywords": [
         "framework",
         "laravel",
-        "sneat-admin"
+        "prop-admin"
     ],
     "license": "MIT",
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/dev4traders/sneat-admin.git",
+            "url": "https://github.com/dev4traders/prop-admin.git",
             "canonical": false
         }
     ],
@@ -20,7 +20,7 @@
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "dev4traders/sneat-admin": "*",
+        "dev4traders/prop-admin": "*",
         "owen-it/laravel-auditing": "13.x-dev",
         "revolution/socialite-wordpress": "dev-master"
     },
