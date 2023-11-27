@@ -6,12 +6,13 @@ namespace App\Enums;
 use Dcat\Admin\DcatEnum;
 use Dcat\Admin\Traits\DcatEnumTrait;
 
-enum RouteSneat : string implements DcatEnum
+enum RouteProp : string implements DcatEnum
 {
     use DcatEnumTrait;
 
-    case DASHBOARDS = 'dashbords';
+    case DASHBOARDS = 'dashboards';
     case DASHBOARD_ANALYTIC = 'dashbord.analytic';
+    case DASHBOARD_PROP = 'dashbord.prop';
 
     case COMPONENTS = 'components';
     case COMPONENTS_ACCORDION = 'components.accordion';

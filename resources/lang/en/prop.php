@@ -3,6 +3,7 @@
 return [
     'dashboards' => 'Dashboards',
     'analytics' => 'Analytics',
+    'prop' => 'Prop',
     'components' => 'Components',
     'accordion' => 'Accordion',
     'alerts' => 'Alerts',

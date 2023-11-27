@@ -23,7 +23,7 @@ class AnalyticController extends Controller
                         __('admin.title'),
                         __('admin.description'),
                         admin_route(RouteAuth::SETTINGS()),
-                        new ImageAdv('/vendor/dcat-admin/images/illustrations/man-with-laptop-light.png', '/vendor/dcat-admin/images/illustrations/man-with-laptop-dark.png', 'man-with-laptop-light'))
+                        new ImageAdv('/vendor/dcat-admin/img/illustrations/man-with-laptop-light.png', '/vendor/dcat-admin/img/illustrations/man-with-laptop-dark.png', 'man-with-laptop-light'))
                     );
                     //$column->row(new Examples\Tickets());
                 });

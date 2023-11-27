@@ -84,7 +84,7 @@ return [
             'auth/logout',
         ],
 
-        'enable_session_middleware' => true,
+        'enable_session_middleware' => false,
 
         'allow-register' => env('ALLOW_REGISTER', true),
         'registration-activation-enabled' => env('REGISTRATION_ACTIVATION_ENABLED', true),
@@ -93,7 +93,7 @@ return [
         'recaptch-enabled' => env('ENABLE_RECAPTCHA', false),
         'recaptch-site'   => env('RE_CAP_SITE', 'YOURGOOGLECAPTCHAsitekeyHERE'),
         'recaptch-secret' => env('RE_CAP_SECRET', 'YOURGOOGLECAPTCHAsecretHERE'),
-        'login-background-image' => env('LOGIN_BACKGROUND_IMAGE', '/vendor/dcat-admin/images/login-bg.png'),
+        'login-background-image' => env('LOGIN_BACKGROUND_IMAGE', '/vendor/dcat-admin/img/login-bg.png'),
     ],
 
     /*
@@ -103,8 +103,8 @@ return [
     |
     */
     'icons' => [
-        'icon-32' => '/vendor/dcat-admin/images/icon-32.png',
-        'icon-192' => '/vendor/dcat-admin/images/icon-192.png'
+        'icon-32' => '/vendor/dcat-admin/img/icon-32.png',
+        'icon-192' => '/vendor/dcat-admin/img/icon-192.png'
     ],
 
         /*
@@ -115,13 +115,13 @@ return [
      | Set a default avatar for newly created users.
      |
      */
-    'default_avatar' => '/vendor/dcat-admin/images/default-avatar.png',
+    'default_avatar' => '/vendor/dcat-admin/img/default-avatar.png',
 
 
-    'logo-mini' => env('APP_LOGO_MINI', '/vendor/dcat-admin/images/logo-mini.png'),
-    'logo-mini-dark' => env('APP_LOGO_MINI_DARK', '/vendor/dcat-admin/images/logo-mini-dark.png'),
-    'logo-image'        => env('APP_LOGO_IMAGE', '/vendor/dcat-admin/images/logo.png'),
-    'logo-image-dark'   => env('APP_LOGO_IMAGE_DARK', '/vendor/dcat-admin/images/logo-dark.png'),
+    'logo-mini' => env('APP_LOGO_MINI', '/vendor/dcat-admin/img/logo-mini.png'),
+    'logo-mini-dark' => env('APP_LOGO_MINI_DARK', '/vendor/dcat-admin/img/logo-mini-dark.png'),
+    'logo-image'        => env('APP_LOGO_IMAGE', '/vendor/dcat-admin/img/logo.png'),
+    'logo-image-dark'   => env('APP_LOGO_IMAGE_DARK', '/vendor/dcat-admin/img/logo-dark.png'),
 
     //todo::rm
     //'disable_no_referrer_meta' => true,
@@ -199,7 +199,7 @@ return [
 
         'middleware' => ['web', 'admin'],
 
-        'enable_session_middleware' => true,
+        'enable_session_middleware' => false,
     ],
 
     /*
