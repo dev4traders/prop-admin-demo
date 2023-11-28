@@ -5,7 +5,7 @@ namespace App\Admin\Forms;
 use Dcat\Admin\Widgets\Form;
 use Symfony\Component\HttpFoundation\Response;
 
-class Setting extends Form
+class SettingForm extends Form
 {
     /**
      * Handle the form request.

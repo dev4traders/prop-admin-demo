@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Admin\Renderable;
+// namespace App\Admin\Renderable;
 
-use App\Admin\Forms\AdminSetting as AdminSettingForm;
-use Dcat\Admin\Support\LazyRenderable;
+// use Dcat\Admin\Support\LazyRenderable;
 
-class AdminSetting extends LazyRenderable
-{
-    public function render()
-    {
-        return AdminSettingForm::make();
-    }
-}
+// class AdminSetting extends LazyRenderable
+// {
+//     public function render()
+//     {
+//         return new AdminSettingForm();
+//     }
+// }
