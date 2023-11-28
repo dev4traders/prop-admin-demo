@@ -140,6 +140,13 @@ return [
         'parent_id' => 0,
     ],
     [
+        'id'        => 'grid-border',
+        'title'     => __('prop.border'),
+        'icon'      => Dcat\Admin\DcatIcon::HOME(),
+        'uri'       => admin_route(App\Enums\RouteProp::GRIDS_BORDER_TABLE()),
+        'parent_id' => 'grids',
+    ],
+    [
         'id'        => 'grid-custom',
         'title'     => __('prop.custom'),
         'icon'      => Dcat\Admin\DcatIcon::HOME(),

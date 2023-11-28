@@ -14,7 +14,7 @@ class SwitchGridView extends Action
         $list = $request->fullUrlWithQuery(['_view_' => 'list']);
 
         return <<<HTML
-<div class="btn-group" data-toggle="buttons" style="margin: 0 5px">
+<div class="btn-group" data-bs-toggle="buttons" style="margin: 0 5px">
     <a href="$img" class="btn btn-white ">
         <i class="feather icon-image"></i>
     </a>

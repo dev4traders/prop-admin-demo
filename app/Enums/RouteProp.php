@@ -36,6 +36,7 @@ enum RouteProp : string implements DcatEnum
     case GRIDS_REPORT = 'grids.report';
     case GRIDS_FIXED = 'grids.fixed';
     case GRIDS_TREE = 'grids.tree';
+    case GRIDS_BORDER_TABLE = 'grids.border';
 
     case GRIDS_MOVIE_COMING = 'grids.coming';
     case GRIDS_MOVIE_IN_THEATRE = 'grids.in_theatre';

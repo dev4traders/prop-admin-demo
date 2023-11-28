@@ -26,6 +26,7 @@ use App\Admin\Controllers\Components\ChartController;
 use App\Admin\Controllers\Components\ModalController;
 use App\Admin\Controllers\Grids\CustomGridController;
 use App\Admin\Controllers\Components\ToastrController;
+use App\Admin\Controllers\Grids\BorderTableController;
 use App\Admin\Controllers\Components\LoadingController;
 use App\Admin\Controllers\Grids\FixedColumnsController;
 use App\Admin\Controllers\Components\MarkdownController;
@@ -161,6 +162,11 @@ Route::group([
 	})->name(RouteProp::GRIDS_MOVIE_TOP());
     $router->get('grids-movies/top250/preview', 'Grids\Movies\Top250Controller@preview');
 
+    $router->get('grids-broder-table', function (Content $content) {
+	    return (new BorderTableController())->index($content);
+	})->name(RouteProp::GRIDS_BORDER_TABLE());
+    $router->get('grids-broder-table/preview', 'Grids\BorderTableController@preview');
+
     $router->get('forms-editors-markdown', function (Content $content) {
 	    return (new EditorController())->markdown($content);
 	})->name(RouteProp::FORMS_EDITORS_MARKDOWN());
@@ -209,8 +215,6 @@ Route::group([
     // $router->get('fixed-columns', 'FixedController@index');
     // $router->get('fixed-columns/preview', 'FixedController@preview');
     // // 固定列功能示例
-    // $router->get('with-border', 'BorderTableController@index');
-    // $router->get('with-border/preview', 'BorderTableController@preview');
     // // 行间距
     // $router->get('row-space', 'RowSpaceController@index');
     // $router->get('row-space/preview', 'RowSpaceController@preview');
