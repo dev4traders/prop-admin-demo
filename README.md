@@ -1,4 +1,9 @@
-# quick steps
+# Dashboard Template for Prop Trading Company
+This is the free example of Prop Trading Dashboard created based on <code>prop-admin</code>. You can use it as a starting point and then customize your own dashboard.
+
+![Example of Prop Admin Use](/resources/user-dashoard-cropped.png "Prop Trading Dashboard Template")
+
+# Quick Steps
     ```bash
     composer install
     composer update
@@ -10,10 +15,10 @@
     # fill db from sql: database\sql\sneat-admin-demo.sql
     php artisan serve
     ```
-# database in sql file for now
+# Database in SQL File
     use file database\sql\sneat-admin-demo.sql
 
-# test credenntials
+# Test Credentials
     login: admin
     password: admin
 
@@ -22,7 +27,7 @@
     **sneat theme builder
     https://tools.themeselection.com/generator/sneat/html
 
-> We recommend you use mentioned system configuration
+> We recommend you to use the following system configuration
 
 - Node version (^18.0.0 or LTS)
 - Composer Version (^2.2)
@@ -90,7 +95,7 @@
    # npm run production [for npm]
    ```
 
-   ### Required Permissions on server
+   ### Required Permissions On Server
 
    If you are facing any issues regarding the permissions, then you need to run the following command in your project directory:
 
@@ -98,3 +103,15 @@
    sudo chmod -R o+rw bootstrap/cache
    sudo chmod -R o+rw storage
    ```
+# Other
+Demo of <code>prop-admin</code> is based on the following plugins or services:
+- [Laravel](https://laravel.com/)
+- [Bootstrap5](https://getbootstrap.com/)
+- [sneat-admin](https://themeselection.com/item/sneat-bootstrap-html-admin-template/)
+- [dcat-admin](https://github.com/jqhph/dcat-admin)
+
+# Demo: 
+http://prop-admin-dash.dev4traders.com/
+
+# License
+<code>prop-admin</code> is licensed under [The MIT License (MIT)](https://github.com/dev4traders/prop-admin/blob/main/LICENSE).
