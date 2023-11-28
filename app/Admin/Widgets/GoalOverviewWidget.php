@@ -2,6 +2,7 @@
 
 namespace App\Admin\Widgets;
 
+use Illuminate\Http\Request;
 use Dcat\Admin\Widgets\Metrics\SingleRound;
 
 class GoalOverviewWidget extends SingleRound
@@ -33,6 +34,17 @@ class GoalOverviewWidget extends SingleRound
         return $this->chart([
             'series' => [$percent],
         ]);
+    }
+
+    /**
+     *
+     * @param Request $request
+     *
+     * @return mixed|void
+     */
+    public function handle(Request $request)
+    {
+        $this->withChart(79);
     }
 
     public function withFooter($completed, $inProgress)

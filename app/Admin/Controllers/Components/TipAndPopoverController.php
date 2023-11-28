@@ -40,9 +40,9 @@ class TipAndPopoverController extends Controller
                 $btn1->tooltip($faker->text(200), true, PlacementType::RIGHT, StyleClassType::PRIMARY, $faker->text(20));
 
                 $row->column(6, new Card('Popover with title', $btn1));
-            })
+            });
 
-            ->row(new Card('Code', new Code(__FILE__, 15, 44)));
+            //->row(new Card('Code', new Code(__FILE__, 15, 44)));
 
     }
 }

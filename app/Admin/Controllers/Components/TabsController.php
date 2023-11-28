@@ -3,13 +3,13 @@ declare(strict_types=1);
 
 namespace App\Admin\Controllers\Components;
 
-use Dcat\Admin\DcatIcon;
 use Faker\Factory;
+use Dcat\Admin\DcatIcon;
 use Dcat\Admin\Layout\Row;
+use Dcat\Admin\Widgets\Tab;
 use Dcat\Admin\Widgets\Code;
 use Dcat\Admin\Layout\Content;
 use Illuminate\Routing\Controller;
-use Dcat\Admin\Widgets\Tab;
 
 class TabsController extends Controller {
 	public function index(Content $content) {
@@ -45,7 +45,7 @@ class TabsController extends Controller {
 				$tabs2->add($faker->text(20), $faker->text(200), FALSE, DcatIcon::USER);
 				$tabs2->add($faker->text(20), $faker->text(200), FALSE, DcatIcon::MESSAGE_SQUARE);
 				$row->column(6, $tabs2);
-			})
-			->row(new Code(__FILE__, 15, 44));
+			});
+//			->row(new Code(__FILE__, 14, 52));
 	}
 }

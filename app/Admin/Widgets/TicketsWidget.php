@@ -24,7 +24,6 @@ class TicketsWidget extends RadialBar
     }
 
     /**
-     * 处理请求
      *
      * @param Request $request
      *
