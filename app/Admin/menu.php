@@ -140,8 +140,8 @@ return [
         'parent_id' => 0,
     ],
     [
-        'id'        => 'grid-custon',
-        'title'     => __('prop.custon'),
+        'id'        => 'grid-custom',
+        'title'     => __('prop.custom'),
         'icon'      => Dcat\Admin\DcatIcon::HOME(),
         'uri'       => admin_route(App\Enums\RouteProp::GRIDS_CUSTOM()),
         'parent_id' => 'grids',
