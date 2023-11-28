@@ -71,10 +71,12 @@ Route::group([
     $router->get('components-check-and-radio', function (Content $content) {
 	    return (new CheckboxAndRadioController())->index($content);
 	})->name(RouteProp::COMPONENTS_CHECK_AND_RADIO());
+    $router->get('components-check-and-radio/preview', 'Components\CheckboxAndRadioController@preview');
 
     $router->get('components-dropdown', function (Content $content) {
 	    return (new DropdownMenuController())->index($content);
 	})->name(RouteProp::COMPONENTS_DROPDOWN());
+    $router->get('components-dropdown/preview', 'Components\DropdownMenuController@preview');
 
     $router->get('components-progress', function (Content $content) {
 	    return (new ProgressController())->index($content);
@@ -111,6 +113,7 @@ Route::group([
     $router->get('components-charts', function (Content $content) {
 	    return (new ChartController())->index($content);
 	})->name(RouteProp::COMPONENTS_CHARTS());
+    $router->get('components-charts/preview', 'Components\ChartController@preview');
 
     $router->get('components-loading', function (Content $content) {
 	    return (new LoadingController())->index($content);
