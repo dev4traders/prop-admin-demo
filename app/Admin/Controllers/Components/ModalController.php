@@ -9,10 +9,12 @@ use Dcat\Admin\Widgets\Table;
 use Dcat\Admin\Layout\Content;
 use App\Admin\Forms\UserProfile;
 use App\Admin\Traits\PreviewCode;
-use App\Admin\Renderable\BarChart;
 use Illuminate\Routing\Controller;
 use App\Admin\Renderable\ModalForm;
 use App\Admin\Renderable\UserTable;
+use App\Admin\Forms\UserProfileForm;
+use App\Admin\Renderable\BarChartLazyRenderable;
+use App\Admin\Renderable\UserTableLazyRenderable;
 
 class ModalController extends Controller
 {
@@ -41,25 +43,25 @@ class ModalController extends Controller
             ->lg()
             ->delay(300)
             ->title('Bar Chart delay')
-            ->body(BarChart::make())
+            ->body(new BarChartLazyRenderable())
             ->button('<button class="btn btn-white"><i class="feather icon-bar-chart-2"></i> Delay</button>');
     }
 
-    // protected function modal3()
-    // {
-    //     return Modal::make()
-    //         ->lg()
-    //         ->title('异步加载 - 表单')
-    //         ->body(UserProfile::make())
-    //         ->button('<button class="btn btn-white btn-outline"><i class="feather icon-edit"></i> 异步加载</button>');
-    // }
+    protected function modal3()
+    {
+        return Modal::make()
+            ->lg()
+            ->title('User Profile')
+            ->body(new UserProfileForm())
+            ->button('<button class="btn btn-white btn-outline"><i class="feather icon-edit"></i> User Profile</button>');
+    }
 
     protected function modal4()
     {
         return (new Modal())
             ->lg()
             ->title('User table')
-            ->body(UserTable::make())
+            ->body(new UserTableLazyRenderable())
             ->button('<button class="btn btn-white "><i class="feather icon-grid"></i> User table</button>');
     }
 
@@ -70,6 +72,7 @@ class ModalController extends Controller
 &nbsp;&nbsp;
 <div class="btn-group">
 {$this->modal2()}
+{$this->modal3()}
 {$this->modal4()}
 </div>
 &nbsp;

@@ -2,15 +2,16 @@
 
 namespace App\Admin\Renderable;
 
+use App\Models\User;
 use Dcat\Admin\Grid;
 use Dcat\Admin\Grid\LazyRenderable;
 use Dcat\Admin\Models\Administrator;
 
-class UserTable extends LazyRenderable
+class UserTableLazyRenderable extends LazyRenderable
 {
     public function grid(): Grid
     {
-        return Grid::make(new Administrator(), function (Grid $grid) {
+        return new Grid(new User(), function (Grid $grid) {
             $grid->column('id', 'ID')->sortable();
             $grid->column('username');
             $grid->column('name');

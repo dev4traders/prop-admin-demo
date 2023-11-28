@@ -97,6 +97,7 @@ Route::group([
     $router->get('components-modal', function (Content $content) {
 	    return (new ModalController())->index($content);
 	})->name(RouteProp::COMPONENTS_MODAL());
+    $router->get('components-modal/preview', 'Components\ModalController@preview');
 
     $router->get('components-table', function (Content $content) {
 	    return (new TableController())->index($content);
