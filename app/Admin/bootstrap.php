@@ -56,7 +56,7 @@ if (! Dcat\Admin\Support\Helper::isAjaxRequest()) {
     });
 
     Admin::userNav(function (UserNav $userNav) {
-        $userNav->put(new UserNavElement($userNav, admin_route(RouteAuth::SETTINGS()), DcatIcon::SETTINGS(), __('admin.home'), new ColoredBadge(5, StyleClassType::DANGER), true));
+        $userNav->put(new UserNavElement($userNav, admin_route(RouteAuth::DASH_SETTINGS()), DcatIcon::SETTINGS(), __('admin.dashboard_settings'), new ColoredBadge(5, StyleClassType::DANGER), true));
     });
 
     Admin::navbar(function (Navbar $navbar) {
