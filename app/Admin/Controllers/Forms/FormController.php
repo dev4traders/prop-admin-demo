@@ -9,11 +9,10 @@ use Dcat\Admin\Widgets\Card;
 use Dcat\Admin\Widgets\Form;
 use Dcat\Admin\Layout\Content;
 use Dcat\Admin\Form\NestedForm;
-use App\Admin\Traits\PreviewCode;
-use App\Admin\Renderable\UserTable;
 use App\Http\Controllers\Controller;
 use Dcat\Admin\Models\Administrator;
 use Symfony\Component\VarDumper\VarDumper;
+use App\Admin\Renderable\UserTableLazyRenderable;
 use Symfony\Component\VarDumper\Cloner\VarCloner;
 use Symfony\Component\VarDumper\Dumper\HtmlDumper;
 
@@ -79,13 +78,13 @@ class FormController extends Controller
 
         $form->selectTable('form1.select-table', 'Select Table')
             ->title('User')
-            ->from(UserTable::make())
+            ->from(UserTableLazyRenderable::make())
             ->model(Administrator::class, 'id', 'name');
 
         $form->multipleSelectTable('form1.select-resource-multiple', 'Multiple Select Table')
             ->title('User')
             ->max(4)
-            ->from(UserTable::make())
+            ->from(UserTableLazyRenderable::make())
             ->model(Administrator::class, 'id', 'name');
 
         $form->icon('form1.icon', 'icon');

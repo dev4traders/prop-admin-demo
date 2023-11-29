@@ -10,12 +10,13 @@ use Dcat\Admin\Layout\Content;
 use Dcat\Admin\Enums\RouteAuth;
 use Dcat\Admin\Widgets\ImageAdv;
 use Dcat\Admin\Widgets\StatItem;
+use Dcat\Admin\Widgets\SimpleCard;
 use App\Http\Controllers\Controller;
 use Dcat\Admin\Enums\StyleClassType;
+use Dcat\Admin\Widgets\StatProgress;
 use Dcat\Admin\Widgets\IconWithToolTip;
 use Dcat\Admin\Widgets\Cards\ProfitCard;
 use Dcat\Admin\Widgets\Cards\PictureCard;
-use Dcat\Admin\Widgets\StatProgress;
 
 class AnalyticController extends Controller
 {
@@ -63,7 +64,7 @@ class AnalyticController extends Controller
                 $progress2 = (new StatProgress(DcatIcon::HOME(true), 'Profit Target', 2000/5000*100, '$3450 / $5000', StyleClassType::WARNING))->withCard()->render();
                 $progress3 = (new StatProgress(DcatIcon::HOME(true), 'Profit Target', 1000/5000*100, '$100 / $5000', StyleClassType::DANGER))->withCard()->render();
 
-                $row->column(8, new Card('Trading Objectives', $progress1.$progress2.$progress3));
+                $row->column(8, (new SimpleCard('Trading Objectives', $progress1.$progress2.$progress3))->tool(new IconWithToolTip(DcatIcon::HELP(), 'test')));
             });
 
     }

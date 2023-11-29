@@ -2,16 +2,12 @@
 
 namespace App\Admin\Controllers\Components;
 
-use Dcat\Admin\Admin;
 use Illuminate\Support\Arr;
 use Dcat\Admin\Widgets\Modal;
 use Dcat\Admin\Widgets\Table;
 use Dcat\Admin\Layout\Content;
-use App\Admin\Forms\UserProfile;
 use App\Admin\Traits\PreviewCode;
 use Illuminate\Routing\Controller;
-use App\Admin\Renderable\ModalForm;
-use App\Admin\Renderable\UserTable;
 use App\Admin\Forms\UserProfileForm;
 use App\Admin\Renderable\BarChartLazyRenderable;
 use App\Admin\Renderable\UserTableLazyRenderable;

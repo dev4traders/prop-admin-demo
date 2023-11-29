@@ -8,7 +8,7 @@ use Dcat\Admin\Layout\Content;
 use App\Admin\Traits\PreviewCode;
 use Illuminate\Routing\Controller;
 use App\Admin\Renderable\PostTable;
-use App\Admin\Renderable\UserTable;
+use App\Admin\Renderable\UserTableLazyRenderable;
 use Dcat\Admin\Models\Administrator;
 
 class GridController extends Controller
@@ -89,7 +89,7 @@ class GridController extends Controller
                     return $userModel::findOrFail($keys)->pluck('name', 'id');
                 };
                 $filter->equal('user', 'User')
-                    ->selectTable(UserTable::make())
+                    ->selectTable(UserTableLazyRenderable::make())
                     ->title('User')
                     ->model(Administrator::class)
                     ->width('300px');
