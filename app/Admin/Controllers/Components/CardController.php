@@ -31,8 +31,8 @@ class CardController extends Controller
         );
 
         $content->row(function (Row $row) use ($faker) {
-            $row->column(2, (new ProfitCard('Profit', '$2000', '78%', DcatIcon::HOME, new IconWithToolTip(DcatIcon::HELP, $faker->text(100)), admin_route(RouteAuth::SETTINGS())))->growing());
-            $row->column(2, (new ProfitCard('Loss', '-$2000', '-78%', DcatIcon::HOME, new IconWithToolTip(DcatIcon::HELP, $faker->text(100)), admin_route(RouteAuth::SETTINGS())))->growing(false));
+            $row->column(2, (new ProfitCard('Profit', '$2000', '78%', DcatIcon::HOME, new IconWithToolTip(DcatIcon::HELP(), $faker->text(100)), admin_route(RouteAuth::SETTINGS())))->growing());
+            $row->column(2, (new ProfitCard('Loss', '-$2000', '-78%', DcatIcon::HOME, new IconWithToolTip(DcatIcon::HELP(), $faker->text(100)), admin_route(RouteAuth::SETTINGS())))->growing(false));
             $row->column(2, new ProfitCard('Dropdown', '$2000', '78%', DcatIcon::HOME,
                 (new Dropdown([(new DropdownItem('test'))]))->size(ButtonSizeType::SM)->icon(DcatIcon::HOME),
             admin_route(RouteAuth::SETTINGS()) ) );
