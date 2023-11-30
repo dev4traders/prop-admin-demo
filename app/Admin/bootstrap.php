@@ -51,8 +51,10 @@ Admin::menu()->add(include __DIR__.'/menu.php', false);
 if (! Dcat\Admin\Support\Helper::isAjaxRequest()) {
 
     Admin::footer(function (Footer $footer) {
-        $footer->start('test_start');
-        $footer->end('test_end');
+        $footer->start('<span class="text-center d-block d-md-inline-block mt-25">
+        Powered by <a target="_blank" href="https://dev4traders.com">dev4traders</a>
+    </span>');
+        $footer->end('Demo Version. Lincese MIT');
     });
 
     Admin::userNav(function (UserNav $userNav) {
