@@ -48,7 +48,8 @@ Route::group([
     'middleware'    => config('admin.route.middleware'),
 ], function (Router $router) {
 
-    $router->get('/', 'HomeController@index');
+    $router->get('/', 'Dashboards\PropController@index');
+
     $router->get('/test', function() {
         return ButtonClassType::PRIMARY(true);
     });
