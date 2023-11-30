@@ -54,7 +54,7 @@ if (! Dcat\Admin\Support\Helper::isAjaxRequest()) {
         $footer->start('<span class="text-center d-block d-md-inline-block mt-25">
         Powered by <a target="_blank" href="https://dev4traders.com">dev4traders</a>
     </span>');
-        $footer->end('Demo Version. Lincese MIT');
+        $footer->end('<p dir="auto"><code>prop-admin</code> is licensed under <a href="https://github.com/dev4traders/prop-admin/blob/main/LICENSE">The MIT License (MIT)</a>.</p>');
     });
 
     Admin::userNav(function (UserNav $userNav) {
