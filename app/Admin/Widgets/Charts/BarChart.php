@@ -95,11 +95,7 @@ class BarChart extends Chart
         return $this->option('xaxis.categories', $data);
     }
 
-    /**
-     *
-     * @return string
-     */
-    public function render()
+    public function render() : string
     {
         $this->buildData();
 

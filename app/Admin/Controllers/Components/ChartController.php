@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers\Components;
 
+use Dcat\Admin\Admin;
 use Dcat\Admin\Layout\Row;
 use Dcat\Admin\Widgets\Card;
 use Dcat\Admin\Layout\Content;
@@ -15,6 +16,7 @@ use App\Admin\Widgets\TicketsWidget;
 use App\Admin\Widgets\Charts\MyAjaxBar;
 use App\Admin\Widgets\GoalOverviewWidget;
 use App\Admin\Renderable\BarChartLazyRenderable;
+use Dcat\Admin\Widgets\ApexCharts\RadialBarChart;
 
 class ChartController extends Controller
 {
@@ -58,6 +60,12 @@ class ChartController extends Controller
 
                 $card = new TotalUsers();
                 $row->column(4, $card);
+            })
+            ->body(function (Row $row) {
+                $bar = new RadialBarChart();
+                $bar->hollowSize(60)->value(99)->offset(50);
+                $bar->colors([Admin::color()->orange()]);
+                $row->column(2, $bar);
             });
     }
 

@@ -60,6 +60,7 @@ Route::group([
     $router->get('dashbord-prop', function (Content $content) {
 	    return (new PropController())->index($content);
 	})->name(RouteProp::DASHBOARD_PROP());
+    $router->get('dashbord-prop/preview', 'Dashboards\PropController@preview');
 
     $router->get('components-accordion', function (Content $content) {
 	    return (new AccordionController())->index($content);

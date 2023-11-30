@@ -17,6 +17,8 @@ use Dcat\Admin\Widgets\StatProgress;
 use Dcat\Admin\Widgets\IconWithToolTip;
 use Dcat\Admin\Widgets\Cards\ProfitCard;
 use Dcat\Admin\Widgets\Cards\PictureCard;
+use Dcat\Admin\Widgets\Metrics\RadialBar;
+use Dcat\Admin\Widgets\ApexCharts\RadialBarChart;
 
 class AnalyticController extends Controller
 {
@@ -65,6 +67,17 @@ class AnalyticController extends Controller
                 $progress3 = (new StatProgress(DcatIcon::HOME(true), 'Profit Target', 1000/5000*100, '$100 / $5000', StyleClassType::DANGER))->withCard()->render();
 
                 $row->column(8, (new SimpleCard('Trading Objectives', $progress1.$progress2.$progress3))->tool(new IconWithToolTip(DcatIcon::HELP(), 'test')));
+            })
+            ->body(function (Row $row) use($faker) {
+
+                $radialBar = new RadialBarChart();
+                $radialBar->value(89);
+                $radialBar->hollowSize(30);
+                //$radialBar->height(380);
+                $row->column(3, (new SimpleCard('Profit Target', $radialBar))->tool(new IconWithToolTip(DcatIcon::HELP(), 'Profit Target'))
+                    //->style('height: 380px;')
+                    ->footer('<span class="font-weight-bold">$3000</span>/<span class="text-muted">$5000</span>')
+            );
             });
 
     }
