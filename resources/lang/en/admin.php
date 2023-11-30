@@ -26,7 +26,7 @@ return [
         'favicon_icon_32' => 'Icon Size of 32x32',
         'favicon_icon_192' => 'Icon Size of 192x192',
     ],
-    'welcome'              => 'Welcome to Dcat!',
+    'welcome'              => 'Welcome to Prop Admin!',
     'or' => 'Or',
     'create_account' => 'Create an account',
     'new_on_platform' => 'New on our platform?',
