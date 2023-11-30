@@ -34,7 +34,7 @@ class Kernel extends HttpKernel
 
         'api' => [
             \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-//            'throttle:api',
+            \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];
@@ -58,7 +58,7 @@ class Kernel extends HttpKernel
 //        'user.guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'user.auth' => \Illuminate\Auth\Middleware\Authenticate::class,
         'user.guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'jwt.verify' => \App\Http\Middleware\JwtMiddleware::class,
+//        'jwt.verify' => \App\Http\Middleware\JwtMiddleware::class,
         'abilities' => \Laravel\Sanctum\Http\Middleware\CheckAbilities::class,
         'ability' => \Laravel\Sanctum\Http\Middleware\CheckForAnyAbility::class,
     ];

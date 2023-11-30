@@ -17,10 +17,11 @@
     ],
     "require": {
         "php": "^8.1",
-        "laravel/framework": "^10.0",
-        "laravel/sanctum": "^3.3",
-        "laravel/tinker": "^2.8",
+        "darkaonline/l5-swagger": "^8.5",
         "dev4traders/prop-admin": "*",
+        "laravel/framework": "^10.0",
+        "laravel/sanctum": "^4.0@dev",
+        "laravel/tinker": "^2.8",
         "owen-it/laravel-auditing": "13.x-dev",
         "revolution/socialite-wordpress": "dev-master"
     },

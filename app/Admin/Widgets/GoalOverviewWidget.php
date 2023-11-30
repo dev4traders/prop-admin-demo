@@ -2,6 +2,7 @@
 
 namespace App\Admin\Widgets;
 
+use Dcat\Admin\Admin;
 use Illuminate\Http\Request;
 use Dcat\Admin\Widgets\Metrics\SingleRound;
 
@@ -33,6 +34,27 @@ class GoalOverviewWidget extends SingleRound
     {
         return $this->chart([
             'series' => [$percent],
+            'colors' => ['red'],
+            'plotOptions' => [
+                'radialBar' => [
+                    'track' => [
+                        'background' => '#ffaaaa',
+                    ],
+                    'dataLabels' => [
+                        'value' => [
+                            'offsetY' => 130,
+                            'color' => 'green',
+                            'fontSize' => '2rem',
+                        ],
+                    ],
+                ],
+            ],
+            'fill' => [
+                'type' => 'gradient',
+                'gradient' => [
+                    'gradientToColors' => [Admin::color()->danger()],
+                ],
+            ],
         ]);
     }
 

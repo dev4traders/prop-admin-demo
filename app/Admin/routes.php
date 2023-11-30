@@ -139,7 +139,7 @@ Route::group([
     $router->get('grids-report', function (Content $content) {
 	    return (new ReportController())->index($content);
 	})->name(RouteProp::GRIDS_REPORT());
-    $router->get('grids-report/preview', 'ReportController@preview');
+//    $router->get('grids-report/preview', 'ReportController@preview');
 
     $router->get('grids-fixed', function (Content $content) {
 	    return (new FixedColumnsController())->index($content);
@@ -189,8 +189,8 @@ Route::group([
     $router->get('forms-step', function (Content $content) {
 	    return (new FormWhenController())->index($content);
 	})->name(RouteProp::FORMS_STEP());
-    $router->get('forms-step/preview', 'StepFormController@preview');
-    $router->post('forms-step', 'StepFormController@store');
+//    $router->get('forms-step/preview', 'StepFormController@preview');
+//    $router->post('forms-step', 'StepFormController@store');
 
     $router->get('forms-form', function (Content $content) {
 	    return (new FormController())->index($content);
