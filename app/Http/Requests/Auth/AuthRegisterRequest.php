@@ -14,7 +14,7 @@ class AuthRegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => 'required|string|email|unique:users',
+            'email' => 'required|string|email|unique:users|unique:admin_users,username',
             'password' => 'required|string|min:8|confirmed',
         ];
     }

@@ -5,13 +5,13 @@
         "version": "1.0"
     },
     "paths": {
-        "/api/v1/login": {
+        "/api/v1/auth/login": {
             "post": {
                 "tags": [
                     "Authentication"
                 ],
                 "summary": "Вход пользователя",
-                "operationId": "15400f94bfe16d4952aa545606939fc2",
+                "operationId": "643b1ef568bcd820eda5f8d045a56929",
                 "requestBody": {
                     "description": "Данные пользователя для входа",
                     "required": true,
@@ -78,13 +78,13 @@
                 }
             }
         },
-        "/api/v1/logout": {
+        "/api/v1/auth/logout": {
             "post": {
                 "tags": [
                     "Authentication"
                 ],
                 "summary": "Выход пользователя",
-                "operationId": "f833f463bbd322d353bd84c79e410b2a",
+                "operationId": "c8b5aff67b455fcee6c6be01f77a7acb",
                 "responses": {
                     "200": {
                         "description": "Успешный выход",
@@ -126,13 +126,13 @@
                 ]
             }
         },
-        "/api/v1/register": {
+        "/api/v1/auth/register": {
             "post": {
                 "tags": [
                     "Authentication"
                 ],
                 "summary": "Регистрация нового пользователя",
-                "operationId": "cc6ddad80129212ea3a6c7f1e42a37df",
+                "operationId": "48aacf2ae6713458d43f70a50373a12a",
                 "requestBody": {
                     "description": "Данные пользователя для регистрации",
                     "required": true,

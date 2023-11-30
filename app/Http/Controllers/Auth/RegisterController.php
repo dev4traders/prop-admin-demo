@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\AuthRegisterRequest;
 use App\Models\User;
+use App\Services\UserService;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;
@@ -14,9 +15,16 @@ use Illuminate\Support\Facades\Hash;
 class RegisterController extends Controller
 {
 
+    protected $userService;
+
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
+    }
+
     /**
      * @OA\Post(
-     *     path="/api/v1/register",
+     *     path="/api/v1/auth/register",
      *     summary="Регистрация нового пользователя",
      *     tags={"Authentication"},
      *     @OA\RequestBody(
@@ -51,20 +59,15 @@ class RegisterController extends Controller
 
     public function register(AuthRegisterRequest $request): JsonResponse
     {
-        // <-- admin_users
+        // <-- for admin_users
         User::unguard();
         // --->
-        $user = User::create([
-            'domain_id' => 1,
-            'name' => $request->input('name'),
-            'username' => $request->input('email'),
-            'password' => Hash::make($request->input('password')),
-        ]);
+        $user = $this->userService->store($request->validated());
 
 //        event(new Registered($user));
         $token = $user->createToken('api-token')->plainTextToken;
 
-        return response()->json(['token' => $token, 'user' => $user, 'message' => 'Registration successful'], 201);
+        return response()->json(['token' => $token, 'message' => 'Registration successful'], 201);
 
     }
 }

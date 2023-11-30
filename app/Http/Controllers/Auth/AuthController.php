@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\AuthLoginRequest;
 use App\Http\Requests\Auth\ResetPasswordRequest;
 use App\Mail\SendPassword;
 use App\Models\User;
+use App\Services\UserService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +19,14 @@ use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
+
+    protected $userService;
+
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
+    }
+
     /**
      * @OA\Info(
      * 	title="API Doc",
@@ -24,7 +34,7 @@ class AuthController extends Controller
      * ),
 
      * @OA\Post(
-     *     path="/api/v1/login",
+     *     path="/api/v1/auth/login",
      *     summary="Вход пользователя",
      *     tags={"Authentication"},
      *     @OA\RequestBody(
@@ -53,15 +63,13 @@ class AuthController extends Controller
      *     ),
      * )
      */
-    public function login(Request $request): JsonResponse
+    public function login(AuthLoginRequest $request): JsonResponse
     {
         $credentials = $request->only('username', 'password');
 
-        if (Auth::attempt($credentials)) {
-            $user = Auth::user();
-            $access_token = $user->createToken('authToken')->plainTextToken;
-            $user_id = $user->id;
-            return response()->json(compact('access_token', 'user_id'), 200);
+        $data = $this->userService->login($credentials);
+        if ($data) {
+            return response()->json($data);
         }
 
         return response()->json(['error' => 'Unauthorized'], 401);
@@ -69,7 +77,7 @@ class AuthController extends Controller
 
     /**
      * @OA\Post(
-     *     path="/api/v1/logout",
+     *     path="/api/v1/auth/logout",
      *     summary="Выход пользователя",
      *     tags={"Authentication"},
      *     security={{ "sanctum": {} }},
@@ -89,22 +97,10 @@ class AuthController extends Controller
      *     ),
      * )
      */
-    public function logout(Request $request): JsonResponse
+    public function logout(): JsonResponse
     {
-        if (Auth::check()) {
-            $request->user()->tokens()->delete();
-
-            return response()->json(['message' => 'Logged out successfully']);
-        }
-
-        return response()->json(['message' => 'User not authenticated'], 401);
+       $this->userService->logout();
+       return response()->json(['message' => 'Logged out successfully']);
     }
 
-    public function resetPassword(ResetPasswordRequest $request): JsonResponse
-    {
-        $user = User::where('email', $request->email)->first();
-        $newPass = Str::random(8);
-        Mail::to($user)->send(new SendPassword($newPass, $request->email));
-        return response()->json(['status' => $user->update(['password' => Hash::make($newPass)])]);
-    }
 }

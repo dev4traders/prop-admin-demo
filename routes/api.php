@@ -24,18 +24,10 @@ use \App\Http\Controllers\Auth\VerificationEmailController;
 Route::middleware('auth:sanctum')->group(function () {
 
 });
-Route::middleware(['guest'])->prefix('v1')->group(function () {
+Route::middleware(['guest'])->prefix('v1/auth')->group(function () {
     Route::controller(AuthController::class)->group(function () {
         Route::post('login', 'login')->name('login');
-        Route::post('logout', 'logout');
-        Route::post('reset-password', 'resetPassword');
+        Route::post('logout', 'logout')->middleware('auth:sanctum');
+        Route::post('register', [RegisterController::class, 'register']);
     });
-    Route::post('register', [RegisterController::class, 'register']);
-
-    Route::get(
-        '/email/verify/{id}/{hash}',
-        [VerificationEmailController::class, 'verify']
-    )->name('verification.verify');
-    Route::post('email/resend', [VerificationEmailController::class, 'resend']);
-
 });
