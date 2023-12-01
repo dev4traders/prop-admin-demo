@@ -180,7 +180,7 @@ Route::group([
     $router->get('forms-editors-tinymce', function (Content $content) {
 	    return (new EditorController())->tinymce($content);
 	})->name(RouteProp::FORMS_EDITORS_TINYMCE());
-
+    $router->get('forms-editors-tinymce/preview', 'Forms\EditorController@preview');
 
     $router->get('forms-when', function (Content $content) {
 	    return (new FormWhenController())->index($content);
